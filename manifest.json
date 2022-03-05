@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "basic timer extension",
+  "version": "0.1",
+  "description": "basic timer extension",
+  "icons": {
+    "16": "watch.png",
+    "48": "watch.png",
+    "128": "watch.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "watch.png",
+      "24": "watch.png",
+      "32": "watch.png"
+    },
+    "default_title": "basic timer extension",
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "permissions": ["storage", "alarms", "notifications"],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
