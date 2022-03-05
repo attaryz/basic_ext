@@ -1,18 +1,13 @@
-const nameInput = document.getElementById("name-input")
+const secondsInput = document.getElementById("seconds-input")
 const btn = document.getElementById("save-btn")
 
 btn.addEventListener("click", () => {
-  const name = nameInput.value
-  chrome.storage.sync.set(
-    {
-      name,
-    },
-    () => {
-      console.log(`name is ${name}`)
-    }
-  )
+  const notificationTime = secondsInput.value
+  chrome.storage.sync.set({
+    notificationTime,
+  })
 })
 
-chrome.storage.sync.get(["name", "test"], (result) => {
-  nameInput.value = result.name ?? ""
+chrome.storage.sync.get(["notificationTime"], (result) => {
+  secondsInput.value = result.notificationTime ?? 1000
 })
